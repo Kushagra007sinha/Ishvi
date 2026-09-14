@@ -9,6 +9,15 @@
   <body>
     <div class="grain" aria-hidden="true"></div>
     <div class="progress" aria-hidden="true"><span></span></div>
+    <audio id="background-music" loop preload="metadata">
+      <source src="audio/background-music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div class="music-dock">
+      <button id="music-toggle" class="music-toggle" type="button" aria-pressed="false">
+        Play music
+      </button>
+    </div>
 
     <main>
       <section class="scene scene--opening" aria-labelledby="title">
