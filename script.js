@@ -50,3 +50,23 @@ if (reducedMotion) {
   window.addEventListener("scroll", updateProgress, { passive: true });
   updateProgress();
 }
+const music = document.querySelector("#background-music");
+const musicToggle = document.querySelector("#music-toggle");
+
+music.volume = 0.2;
+
+musicToggle.addEventListener("click", async () => {
+  if (music.paused) {
+    try {
+      await music.play();
+      musicToggle.textContent = "Pause music";
+      musicToggle.setAttribute("aria-pressed", "true");
+    } catch {
+      musicToggle.textContent = "Add music file";
+    }
+  } else {
+    music.pause();
+    musicToggle.textContent = "Play music";
+    musicToggle.setAttribute("aria-pressed", "false");
+  }
+});
